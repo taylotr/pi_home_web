@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TT Home Automation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../bootstrap/css/static_navbar.css" rel="stylesheet">
+    <link href="../bootstrap/css/static_span.css" rel="stylesheet">
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+	<style type="text/css">
+	  body {
+	    padding-top: 60px;
+	    padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+	    padding: 9px 0;
+	  }
+	  @media (max-width: 979px) {
+	    body {
+	      padding-top: 0;
+	    }
+	  }
+	</style>
+
+	<script type="text/javascript">
+		cc=0;
+		function changeimage()
+		{
+		if (cc==0) 
+		{
+		cc=1;
+		/*document.location='../cgi-bin/pi_led_on.cgi'*/
+		document.getElementById('myimage').src="../img/lightbulbon.jpg";
+		$.ajax({
+		  type: "GET",
+		  url: "../cgi-bin/pi_led_on.cgi",
+		  dataType: "script"
+		});
+		}
+		else
+		{
+		cc=0;
+		/*document.location='../cgi-bin/pi_led_off.cgi'*/
+		document.getElementById('myimage').src="../img/lightbulboff.jpg";
+		$.ajax({
+		  type: "GET",
+		  url: "../cgi-bin/pi_led_off.cgi",
+		  dataType: "script"
+		});
+		}
+		}
+	</script>
+
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.html">TT Home Automation</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="index.html"><i class="icon-home icon-white"></i> Home</a></li>
+	      <li class="divider-vertical"></li>
+              <li><a href="kitchen.html">Kitchen</a></li>
+	      <li class="divider-vertical"></li>
+              <li><a href="pool.html">Pool</a></li>
+	      <li class="divider-vertical"></li>
+              <li><a href="garage.html">Garage</a></li>
+	      <li class="divider-vertical"></li>
+              <li class="active"><a href="wiki.html">Wiki</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1> The project page, this will keep the ideas/concepts/development. </h1>
+      <p>Going to have to find out a way to sync this page with the github site. </p>
+     
+	<dl>
+      <h4>Brainstorming Ideas</h4>
+
+<dt>Home Thermostat:</dt><dd> - Similar to the Nest Learning Thermostat, except with doing it all for &lt;$100.</dd>
+<dd> - Just found a link to connect a temperature sensor to the RPi.</dd>
+<dd> - Humidity Sensor</dd>
+<dt>Garagedoor Opener/Status Checker</dt><dd> - Check the status of the garage door and relay that back to a smart phone.</dd>
+<dt>Parking Sensor</dt><dd> - While you could certainly just hang a tennis ball from the roof of the garage and touch your car to it when you arrive home, would it be more fun to have LED's turn green and tell you when to stop?</dd>
+<dt>Pool Timer</dt><dd> - If you have a pool at home, remove the timer, place an RPi in the same box and now you can control your pool timer from the network.</dd>
+<dd> - Pool Timer Docs</dd>
+<dt>Water Heater Controller</dt><dd> - Connect an RPi to the water heater and monitor your water heater, maybe even turn it off completely when you leave town, based on a timer or just a web enabled app.</dd>
+<dt>Robot fish for the pool</dt><dd> - An idea from OpenElectronics.org where they created an Arduino fish (YouTube video). To carry it a bit further, perhaps add a thermometer, and then to go even further, have it test the chemicals in the pool water and let you know what/when you need to add something. The latter part may be a bit arduous, but sounds interesting. Here is a link to the original Arduino project, hopefully adaptable for the RPi. If the fish is too complex, perhaps the data gathering could be performed with just a float, a solar shield and some waterproofing. Then attach the unit to the pool sweeper (that runs across the bottom of the pool) and it would be dragged around the pool.</dd>
+<dt>GPIO Webpage Controller</dt><dd> - Once we get a device on the network and want to start controlling it, we'll want to use a webpage to control it. We'll start researching it now.</dd>
+<dd> - Instructables - Web Control of Raspberry Pi GPIO</dd>
+
+	</dl>
+
+    </div>
+    </div>
+  </body>
+</html>
+
