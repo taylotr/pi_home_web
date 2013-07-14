@@ -1,0 +1,23 @@
+/*div.row-fluid {
+    background-color: red;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 15px;
+}*/
+
+.span4 {
+    background-color: #EBDFD4;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 35px;
+}
+
+.text-helper {
+    background-color: #EBDFD4;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
